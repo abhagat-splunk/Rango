@@ -26,7 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
+TEMPLATE_PATH = os.path.join(BASE_DIR, 'tango_with_django_project/templates')
+#Template Directory Location
+TEMPLATE_DIRS = (TEMPLATE_PATH,)
 # Application definition
 
 INSTALLED_APPS = (
