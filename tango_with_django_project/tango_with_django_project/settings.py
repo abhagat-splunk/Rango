@@ -26,10 +26,22 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+'''
+The __file__ gives the absolute path to the settings file, then the call to os.path.dirname() provides the reference to the absolute path of the directory.
+Calling os.path.dirname() again, removes another layer, so that BASE_DIR contains, <workspace>/tango_with_django_project/.
+'''
+
+
 TEMPLATE_PATH = os.path.join(BASE_DIR, 'tango_with_django_project/templates')
 #Template Directory Location
 TEMPLATE_DIRS = (TEMPLATE_PATH,)
 # Application definition
+
+
+
+
+
+
 
 INSTALLED_APPS = (
     'django.contrib.admin',
@@ -82,5 +94,15 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
+STATIC_PATH = os.path.join(BASE_DIR,'tango_with_django_project/static')
+print STATIC_PATH
+print BASE_DIR
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    STATIC_PATH,
+)
+
+#Static Media Server 
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'tango_with_django_project/media')
